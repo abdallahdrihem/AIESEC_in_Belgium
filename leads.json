@@ -1,0 +1,15 @@
+{
+  "Choose Please select the office nearest to you": "",  
+  "Antwerp":"Ua",
+"Brussels (ICHEC)":"Ichec",
+"Brussels (IHECS)":"Ihecs",
+"Brussels (KU Leuven)":"Campus Brussel",
+"Brussels (Saint-Louis)":"Saint Louis",
+"Brussels (ULB)":"Ulb",
+"Brussels (VUB)":"Vub",
+"Gent" :"Gent",
+"Hasselt":"Limburg",
+"Leuven":"Leuven",
+"Louvain-la-Neuve":"Louvain La Neuve",
+"Luxembourg":"Luxembourg"
+}
