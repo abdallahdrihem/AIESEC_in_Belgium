@@ -1,0 +1,197 @@
+
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<style>
+
+
+
+ 
+
+label.radio {
+	cursor: pointer;
+  text-indent: 35px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+ 
+.row{
+  margin-bottom: 20px;
+}
+
+#terms{
+ font-size: 13px;
+ font-family: Lato; font-weight: bold;}
+
+
+input[type=text],input[type=password],input[type=number],select{
+font-family: Lato; font-weight: bold;
+  width: 50%; 
+  height: 36px; 
+  -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px; 
+  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  background-color: #fff; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 1px #cbc9c9;
+
+  padding-left: 10px;
+}
+
+input[type=submit]{
+ width: 50%; 
+  height: 36px; 
+ background-color: #037EF3;  
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+  
+    border-radius: 4px;
+}
+
+input[type=submit]:hover{
+ width: 50%; 
+  height: 36px; 
+     background-color: #7E8589;  
+    border: none;
+    color: white;
+ 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+ 
+    border-radius: 4px;}
+
+#icon {
+  display: inline-block;
+    height: 19px; 
+  width: 30px;
+ 
+ 
+  -webkit-border-radius: 4px 0px 0px 4px; 
+  -moz-border-radius: 4px 0px 0px 4px; 
+ 
+  border-radius: 4px 0px 0px 4px;
+  color: #037EF3;
+ 
+  
+}
+
+ 
+
+
+</style>
+</head>
+
+<body>
+  <center>
+<form action="{path-gis_reg_process}" method="POST" class="regform" id="expa_reg_form" accept-charset="UTF-8">
+   
+<!--First Name-->
+ <div class="row">
+   <label id="icon"> <i class="fa fa-user-o" aria-hidden="true"></i> </label><input id="first_name" class="input"  placeholder="First Name" type="text" maxlength="50" name="first_name" 
+      required 
+      oninvalid="this.setCustomValidity('Your name')" 
+      oninput="setCustomValidity('')">
+    
+  </div>
+ 
+  <!--Last Name-->
+ 
+   <div class="row">
+   <label id="icon"> <i class="fa fa-user-o" aria-hidden="true"></i> </label><input id="last_name" class="input" placeholder="Last Name" type="text" name="last_name" maxlength="50"
+      required 
+      oninvalid="this.setCustomValidity('Your surname')" 
+      oninput="setCustomValidity('')"> 
+    
+  </div>
+ 
+  <!--E-mail-->
+  
+   <div class="row">
+   <label id="icon"> <i class="fa fa-envelope"  aria-hidden="true"></i> </label><input id="email" class="input" type="text" placeholder="Email" name="email" maxlength="50"
+      required 
+      oninvalid="this.setCustomValidity('Please input valid e-mail')" 
+      oninput="setCustomValidity('')" 
+      pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$">
+    
+  </div>
+   
+  <!--Password-->
+  
+	
+    <div class="row">
+   <label id="icon"> <i class="fa fa-lock" aria-hidden="true"></i> </label><input id="password" class="input" type="password" placeholder="Password" name="password" 
+      required 
+      oninvalid="this.setCustomValidity('Your password needs to be at least 8 characters long')" 
+      oninput="setCustomValidity('')"
+      pattern=".{8,}"> 
+    
+  </div>
+   <!--Phone -->
+      <div class="row">
+      <label id="icon"> <i class="fa fa-phone" aria-hidden="true"></i> </label><input id="phone" class="input" placeholder="Phone Number" type="number" name="phone" maxlength="13"
+      required 
+      oninvalid="this.setCustomValidity('phone')" 
+      oninput="setCustomValidity('')"> 
+	   </div>
+    <!--local Committee-->
+	 
+      <div class="row">
+   <label id="icon"> <i class="fa fa-map-marker" aria-hidden="true"></i> </label><select  id="university" name="university" title="{lead-name}">
+          {leads-option-list}
+
+      </select>
+    
+  </div>
+   
+    <!--LC-->
+ 
+    <div class="row">
+   <label id="icon"> <i class="fa fa-map-marker" aria-hidden="true"></i> </label><input class="readonly" id="localcommittee" name="localcommittee" title="{lc}" type="text" readonly />
+    
+  </div>
+  
+        <input type="hidden" name="website_url" value="{website_url}">
+      
+    <div id="error" class="error"><p></p></div>
+ 
+	   <span id="terms"><p>By clicking Register, you agree on our <a href="https://opportunities.aiesec.org/assets/terms.pdf">terms and condition</a>.</p><span>
+  <div id="submit">
+        <input type="submit" id="submit_button" name="submit" clicked="false" class="send" value="REGISTER">
+    </div>
+	
+</form>
+ </center>
+<script type='text/javascript' src='{path-gis_lcMapper}'></script>
+<script type='text/javascript'>
+//var $j = jQuery.noConflict();
+jQuery(document).ready(function($){
+    var myJsonString = getLeads('{path-leads-json}');
+    //jQuery(".regform").validationEngine();
+    jQuery('#university').change(function($) {
+    //    $('#localcommittee').val((mapLC($('#university').val())));
+        jQuery('#localcommittee').val(mapLC(jQuery('#university').val()));
+    });
+    
+    jQuery('#submit_button').click(function($){
+        jQuery('#submit_button').attr('clicked', 'true');
+
+    });
+});
+</script>
+ 
